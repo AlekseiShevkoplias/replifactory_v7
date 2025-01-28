@@ -1,0 +1,1525 @@
+flask_app/experiment/ModelBasedCulture/morbidostat_updater.py:2:20: F401 [*] `pprint.pprint` imported but unused
+  |
+1 | from datetime import timedelta
+2 | from pprint import pprint
+  |                    ^^^^^^ F401
+3 | import numpy as np
+  |
+  = help: Remove unused import: `pprint.pprint`
+
+flask_app/experiment/ModelBasedCulture/tests/test_model.py:16:1: E402 Module level import not at top of file
+   |
+14 | model = CultureGrowthModel(**culture_growth_model_default_parameters)
+15 | model.updater = updater
+16 | from experiment.plot import plot_culture
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+17 |
+18 | model.simulate_experiment(30)
+   |
+
+flask_app/experiment/ModelBasedCulture/tests/test_model.py:20:1: E402 Module level import not at top of file
+   |
+18 | model.simulate_experiment(30)
+19 | fig = plot_culture(model)
+20 | import plotly.io as pio
+   | ^^^^^^^^^^^^^^^^^^^^^^^ E402
+21 | pio.show(fig)
+   |
+
+flask_app/experiment/ModelBasedCulture/tests/updater_objective_minimize.py:6:83: F401 [*] `experiment.ModelBasedCulture.culture_growth_model.get_simulation_efficiency` imported but unused
+  |
+5 | from experiment.ModelBasedCulture.morbidostat_updater import MorbidostatUpdater, morbidostat_updater_default_parameters
+6 | from experiment.ModelBasedCulture.culture_growth_model import CultureGrowthModel, get_simulation_efficiency, culture_growth_model_defau…
+  |                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^ F401
+7 | from test_model import score_model
+8 | from scipy.optimize import minimize
+  |
+  = help: Remove unused import: `experiment.ModelBasedCulture.culture_growth_model.get_simulation_efficiency`
+
+flask_app/experiment/culture.py:6:82: F401 [*] `experiment.ModelBasedCulture.morbidostat_updater.morbidostat_updater_default_parameters` imported but unused
+  |
+4 | from experiment.database_models import CultureData, PumpData, CultureGenerationData
+5 | from experiment.growth_rate import calculate_last_growth_rate
+6 | from experiment.ModelBasedCulture.morbidostat_updater import MorbidostatUpdater, morbidostat_updater_default_parameters
+  |                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ F401
+7 | from minimal_device.dilution import make_device_dilution
+  |
+  = help: Remove unused import: `experiment.ModelBasedCulture.morbidostat_updater.morbidostat_updater_default_parameters`
+
+flask_app/experiment/culture.py:9:73: F401 [*] `.ModelBasedCulture.culture_growth_model.culture_growth_model_default_parameters` imported but unused
+   |
+ 7 | from minimal_device.dilution import make_device_dilution
+ 8 |
+ 9 | from .ModelBasedCulture.culture_growth_model import CultureGrowthModel, culture_growth_model_default_parameters
+   |                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ F401
+10 | from .ModelBasedCulture.real_culture_wrapper import RealCultureWrapper
+11 | from .plot import plot_culture
+   |
+   = help: Remove unused import: `.ModelBasedCulture.culture_growth_model.culture_growth_model_default_parameters`
+
+flask_app/experiment/database_models.py:7:1: E402 Module level import not at top of file
+  |
+5 | from sqlalchemy import JSON
+6 | db = SQLAlchemy()
+7 | from experiment.ModelBasedCulture.culture_growth_model import culture_growth_model_default_parameters
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+8 | from experiment.ModelBasedCulture.morbidostat_updater import morbidostat_updater_default_parameters
+  |
+
+flask_app/experiment/database_models.py:8:1: E402 Module level import not at top of file
+   |
+ 6 | db = SQLAlchemy()
+ 7 | from experiment.ModelBasedCulture.culture_growth_model import culture_growth_model_default_parameters
+ 8 | from experiment.ModelBasedCulture.morbidostat_updater import morbidostat_updater_default_parameters
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+ 9 |
+10 | name_parameters = {"name": "Species 1",
+   |
+
+flask_app/experiment/experiment.py:6:8: F401 [*] `sys` imported but unused
+  |
+4 | import queue
+5 |
+6 | import sys
+  |        ^^^ F401
+7 | import io
+8 | from copy import deepcopy
+  |
+  = help: Remove unused import: `sys`
+
+flask_app/experiment/experiment.py:7:8: F401 [*] `io` imported but unused
+  |
+6 | import sys
+7 | import io
+  |        ^^ F401
+8 | from copy import deepcopy
+9 | from pprint import pformat, pprint
+  |
+  = help: Remove unused import: `io`
+
+flask_app/experiment/experiment.py:8:18: F401 [*] `copy.deepcopy` imported but unused
+  |
+6 | import sys
+7 | import io
+8 | from copy import deepcopy
+  |                  ^^^^^^^^ F401
+9 | from pprint import pformat, pprint
+  |
+  = help: Remove unused import: `copy.deepcopy`
+
+flask_app/experiment/experiment.py:9:20: F401 [*] `pprint.pformat` imported but unused
+   |
+ 7 | import io
+ 8 | from copy import deepcopy
+ 9 | from pprint import pformat, pprint
+   |                    ^^^^^^^ F401
+10 |
+11 | import numpy as np
+   |
+   = help: Remove unused import
+
+flask_app/experiment/experiment.py:9:29: F401 [*] `pprint.pprint` imported but unused
+   |
+ 7 | import io
+ 8 | from copy import deepcopy
+ 9 | from pprint import pformat, pprint
+   |                             ^^^^^^ F401
+10 |
+11 | import numpy as np
+   |
+   = help: Remove unused import
+
+flask_app/experiment/experiment.py:11:17: F401 [*] `numpy` imported but unused
+   |
+ 9 | from pprint import pformat, pprint
+10 |
+11 | import numpy as np
+   |                 ^^ F401
+12 | import schedule
+13 | from experiment.database_models import ExperimentModel
+   |
+   = help: Remove unused import: `numpy`
+
+flask_app/experiment/plot.py:1:8: F401 [*] `json` imported but unused
+  |
+1 | import json
+  |        ^^^^ F401
+2 | from datetime import timedelta, datetime
+3 | import plotly.graph_objs as go
+  |
+  = help: Remove unused import: `json`
+
+flask_app/experiment/plot.py:2:22: F401 [*] `datetime.timedelta` imported but unused
+  |
+1 | import json
+2 | from datetime import timedelta, datetime
+  |                      ^^^^^^^^^ F401
+3 | import plotly.graph_objs as go
+  |
+  = help: Remove unused import: `datetime.timedelta`
+
+flask_app/minimal_device/base_device.py:329:9: E722 Do not use bare `except`
+    |
+327 |             else:
+328 |                 return False
+329 |         except:
+    |         ^^^^^^ E722
+330 |             traceback.print_exc()
+331 |             return False
+    |
+
+flask_app/minimal_device/dilution.py:1:8: F401 [*] `os` imported but unused
+  |
+1 | import os
+  |        ^^ F401
+2 | import time
+  |
+  = help: Remove unused import: `os`
+
+flask_app/minimal_device/led.py:4:8: F401 [*] `pyftdi.i2c` imported but unused
+  |
+2 | import threading
+3 | import time
+4 | import pyftdi.i2c
+  |        ^^^^^^^^^^ F401
+  |
+  = help: Remove unused import: `pyftdi.i2c`
+
+flask_app/minimal_device/pump.py:7:28: F401 [*] `scipy.optimize.fsolve` imported but unused
+  |
+5 | # import pandas as pd
+6 | # import scipy.optimize
+7 | from scipy.optimize import fsolve
+  |                            ^^^^^^ F401
+8 |
+9 | from .stepper import Stepper
+  |
+  = help: Remove unused import: `scipy.optimize.fsolve`
+
+flask_app/minimal_device/stirrers.py:105:9: F841 Local variable `bits_per_minute` is assigned to but never used
+    |
+103 |             return 0
+104 |         ms_per_rotation = 60 / estimated_rpm * 1000
+105 |         bits_per_minute = self.freq * 60
+    |         ^^^^^^^^^^^^^^^ F841
+106 |         ms_per_bit = 1 / self.freq * 1000
+107 |         bits_per_rotation = ms_per_rotation / ms_per_bit
+    |
+    = help: Remove assignment to unused variable `bits_per_minute`
+
+flask_app/minimal_device/stirrers.py:125:9: F841 Local variable `dt` is assigned to but never used
+    |
+123 |         finally:
+124 |             self.device.lock_ftdi.release()
+125 |         dt = time.time() - t0
+    |         ^^ F841
+126 |         binstr = "".join([bin(r)[2:].rjust(8, "0") for r in res])
+    |
+    = help: Remove assignment to unused variable `dt`
+
+flask_app/minimal_device/stirrers.py:132:9: F841 Local variable `ones_ratio` is assigned to but never used
+    |
+131 |         # Calculate the ratio of '1's in the binary data
+132 |         ones_ratio = sum(1 for i in binstr if i == "1") / (8 * nbytes)
+    |         ^^^^^^^^^^ F841
+133 |
+134 |         # Find repeated sequences in the binary string
+    |
+    = help: Remove assignment to unused variable `ones_ratio`
+
+flask_app/routes/device_routes.py:8:40: F401 [*] `minimal_device.device_data.default_device_data` imported but unused
+   |
+ 6 | import sys
+ 7 | sys.path.insert(0, '..')
+ 8 | from minimal_device.device_data import default_device_data
+   |                                        ^^^^^^^^^^^^^^^^^^^ F401
+ 9 | from minimal_device.base_device import BaseDevice
+10 | device_routes = Blueprint('device_routes', __name__)
+   |
+   = help: Remove unused import: `minimal_device.device_data.default_device_data`
+
+flask_app/routes/device_routes.py:139:5: E722 Do not use bare `except`
+    |
+137 |         'device_states': current_app.device.device_data,
+138 |     })
+139 |     except:
+    |     ^^^^^^ E722
+140 |         return jsonify({
+141 |         'success': False,
+    |
+
+flask_app/routes/device_routes.py:153:9: E722 Do not use bare `except`
+    |
+151 |         try:
+152 |             new_dict[float(key)] = dict[key]
+153 |         except:
+    |         ^^^^^^ E722
+154 |             pass
+    |
+
+flask_app/routes/device_routes.py:228:5: E722 Do not use bare `except`
+    |
+226 |             current_app.device.hello()
+227 |             return jsonify({'success': True, 'device_states': current_app.device.device_data})
+228 |     except:
+    |     ^^^^^^ E722
+229 |         print("Device not connected")
+230 |         pass
+    |
+
+flask_app/routes/device_routes.py:281:9: E722 Do not use bare `except`
+    |
+279 |                         current_app.experiment.device.hello()
+280 |                 return jsonify({'success': True, 'device_states': current_app.device.device_data})
+281 |         except:
+    |         ^^^^^^ E722
+282 |             print("Device not connected yet")
+283 |             pass
+    |
+
+flask_app/routes/device_routes.py:291:9: E722 Do not use bare `except`
+    |
+289 |                 current_app.experiment.device = current_app.device
+290 |             return jsonify({'success': True, 'device_states': current_app.device.device_data})
+291 |         except:
+    |         ^^^^^^ E722
+292 |             print("Connection error, printing traceback")
+293 |             traceback.print_exc()
+    |
+
+flask_app/routes/experiment_routes.py:4:18: F401 [*] `pandas` imported but unused
+  |
+2 | import sys
+3 |
+4 | import pandas as pd
+  |                  ^^ F401
+5 | import sqlalchemy
+  |
+  = help: Remove unused import: `pandas`
+
+flask_app/routes/experiment_routes.py:171:33: F841 [*] Local variable `e` is assigned to but never used
+    |
+169 |             try:
+170 |                 connect_device()
+171 |             except Exception as e:
+    |                                 ^ F841
+172 |                 return jsonify({'error': 'device not connected'}), 400
+    |
+    = help: Remove assignment to unused variable `e`
+
+flask_app/routes/experiment_routes.py:189:25: F841 [*] Local variable `e` is assigned to but never used
+    |
+187 |         info = current_app.experiment.get_experiment_status_dict()
+188 |         return jsonify(info)
+189 |     except Exception as e:
+    |                         ^ F841
+190 |         import traceback
+191 |         return traceback.format_exc()
+    |
+    = help: Remove assignment to unused variable `e`
+
+flask_app/routes/service_routes.py:19:5: E722 Do not use bare `except`
+   |
+17 |     try:
+18 |         return capture_image_pi()
+19 |     except:
+   |     ^^^^^^ E722
+20 |         try:
+21 |             return capture_image_picamzero()
+   |
+
+flask_app/routes/service_routes.py:22:9: E722 Do not use bare `except`
+   |
+20 |         try:
+21 |             return capture_image_picamzero()
+22 |         except:
+   |         ^^^^^^ E722
+23 |             return capture_image_cv2()
+   |
+
+flask_app/routes/service_routes.py:79:1: E402 Module level import not at top of file
+   |
+79 | from flask import abort
+   | ^^^^^^^^^^^^^^^^^^^^^^^ E402
+80 |
+81 | allowed_updates = {"frontend", "backend", "full"}
+   |
+
+flask_app/routes/service_routes.py:154:9: E722 Do not use bare `except`
+    |
+152 |             if result.returncode == 0:
+153 |                 d[file] = result.stdout.decode('utf-8')
+154 |         except:
+    |         ^^^^^^ E722
+155 |             # windows
+156 |             command = ["powershell", "Get-Content", file, "-Tail", str(lines)]
+    |
+
+flask_app/routes/service_routes.py:168:20: F821 Undefined name `current_app`
+    |
+166 | @service_routes.route('/export_csv', methods=['GET'])
+167 | def export_csv():
+168 |     return jsonify(current_app.experiment.model.to_dict()), 200
+    |                    ^^^^^^^^^^^ F821
+169 |
+170 |     # get all experiments from database
+    |
+
+flask_app/routes/service_routes.py:171:19: F821 Undefined name `db_session`
+    |
+170 |     # get all experiments from database
+171 |     experiments = db_session.query(Experiment).all()
+    |                   ^^^^^^^^^^ F821
+172 |
+173 |     # create dataframe from experiments
+    |
+
+flask_app/routes/service_routes.py:171:36: F821 Undefined name `Experiment`
+    |
+170 |     # get all experiments from database
+171 |     experiments = db_session.query(Experiment).all()
+    |                                    ^^^^^^^^^^ F821
+172 |
+173 |     # create dataframe from experiments
+    |
+
+flask_app/routes/service_routes.py:174:10: F821 Undefined name `pd`
+    |
+173 |     # create dataframe from experiments
+174 |     df = pd.DataFrame([exp.to_dict() for exp in experiments])
+    |          ^^ F821
+175 |
+176 |     # convert dataframe to csv
+    |
+
+flask_app/routes/service_routes.py:180:16: F821 Undefined name `Response`
+    |
+179 |     # create response object
+180 |     response = Response(csv, mimetype='text/csv')
+    |                ^^^^^^^^ F821
+181 |     response.headers['Content-Disposition'] = 'attachment; filename=export.csv'
+    |
+
+flask_app/routes/service_routes.py:195:5: E722 Do not use bare `except`
+    |
+193 |         else:
+194 |             return jsonify({'error running '+command: result.stdout.decode('utf-8')}), 500
+195 |     except:
+    |     ^^^^^^ E722
+196 |         return jsonify({'error': 'Failed to execute command: '+command}), 500
+    |
+
+flask_app/server.py:9:49: F401 [*] `routes.device_routes.connect_device` imported but unused
+   |
+ 7 | from waitress import serve
+ 8 | from flask import Flask, current_app
+ 9 | from routes.device_routes import device_routes, connect_device
+   |                                                 ^^^^^^^^^^^^^^ F401
+10 |
+11 | from flask_cors import CORS
+   |
+   = help: Remove unused import: `routes.device_routes.connect_device`
+
+flask_app/server.py:12:30: F401 [*] `flask_sqlalchemy.SQLAlchemy` imported but unused
+   |
+11 | from flask_cors import CORS
+12 | from flask_sqlalchemy import SQLAlchemy
+   |                              ^^^^^^^^^^ F401
+13 | from flask_migrate import Migrate
+14 | import logging
+   |
+   = help: Remove unused import: `flask_sqlalchemy.SQLAlchemy`
+
+flask_app/server.py:42:5: F841 Local variable `migrate` is assigned to but never used
+   |
+41 |     db.init_app(app)
+42 |     migrate = Migrate(app, db)
+   |     ^^^^^^^ F841
+43 |
+44 |     with app.app_context():
+   |
+   = help: Remove assignment to unused variable `migrate`
+
+flask_app/server.py:56:9: E722 Do not use bare `except`
+   |
+54 |         try:
+55 |             current_app.device.disconnect_all()
+56 |         except:
+   |         ^^^^^^ E722
+57 |             pass
+58 |         os.kill(pid, signal.SIGTERM)
+   |
+
+flask_app/tests/debug/debug_device.py:3:8: F401 [*] `pyftdi` imported but unused
+  |
+1 | import time
+2 |
+3 | import pyftdi
+  |        ^^^^^^ F401
+4 | from pyftdi.i2c import I2cController
+5 | from pyftdi.spi import SpiController
+  |
+  = help: Remove unused import: `pyftdi`
+
+flask_app/tests/debug/debug_device.py:9:1: E402 Module level import not at top of file
+   |
+ 7 | print(sys.path)
+ 8 | sys.path.append('./flask_app/')
+ 9 | from minimal_device.pwm import PwmController
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+10 | class BaseDevice:
+11 |     PORT_ADC = 0x68  # MCP3421A0  1101 000
+   |
+
+flask_app/tests/debug/debug_device.py:25:9: F841 Local variable `t0` is assigned to but never used
+   |
+24 |     def __init__(self, ftdi_address="ftdi://ftdi:2232h", connect=False, directory=None):
+25 |         t0 = time.time()
+   |         ^^ F841
+26 |         print("Initializing device", time.ctime())
+27 |         self.ftdi_address = ftdi_address
+   |
+   = help: Remove assignment to unused variable `t0`
+
+flask_app/tests/debug/erase_memory.py:4:8: F401 [*] `pyftdi` imported but unused
+  |
+2 | import time
+3 |
+4 | import pyftdi
+  |        ^^^^^^ F401
+5 | from pyftdi.i2c import I2cController
+6 | from pyftdi.spi import SpiController
+  |
+  = help: Remove unused import: `pyftdi`
+
+flask_app/tests/debug/erase_memory.py:10:1: E402 Module level import not at top of file
+   |
+ 8 | print(sys.path)
+ 9 | sys.path.append('./flask_app/')
+10 | from minimal_device.eeprom import EEPROM
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+11 |
+12 | class BaseDeviceEraseMemory:
+   |
+
+flask_app/tests/debug/erase_memory.py:27:9: F841 Local variable `t0` is assigned to but never used
+   |
+26 |     def __init__(self, ftdi_address="ftdi://ftdi:2232h", connect=False, directory=None):
+27 |         t0 = time.time()
+   |         ^^ F841
+28 |         print("Initializing device", time.ctime())
+29 |         self.ftdi_address = ftdi_address
+   |
+   = help: Remove assignment to unused variable `t0`
+
+flask_app/tests/experiment_test.py:9:1: E402 Module level import not at top of file
+   |
+ 7 | # dev.connect()
+ 8 | # dev.hello()
+ 9 | from experiment.database_models import ExperimentModel, db
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+10 | import os
+   |
+
+flask_app/tests/experiment_test.py:10:1: E402 Module level import not at top of file
+   |
+ 8 | # dev.hello()
+ 9 | from experiment.database_models import ExperimentModel, db
+10 | import os
+   | ^^^^^^^^^ E402
+11 |
+12 | def create_test_app():
+   |
+
+flask_app/tests/experiment_test.py:35:1: F821 Undefined name `experiment`
+   |
+33 | app.experiment.device.hello()
+34 | #%%
+35 | experiment.cultures[6].update()
+   | ^^^^^^^^^^ F821
+36 | #%%
+37 | experiment.cultures[7].update()
+   |
+
+flask_app/tests/experiment_test.py:37:1: F821 Undefined name `experiment`
+   |
+35 | experiment.cultures[6].update()
+36 | #%%
+37 | experiment.cultures[7].update()
+   | ^^^^^^^^^^ F821
+38 | #%%
+39 | experiment.cultures[7].get_first_od_timestamp()
+   |
+
+flask_app/tests/experiment_test.py:39:1: F821 Undefined name `experiment`
+   |
+37 | experiment.cultures[7].update()
+38 | #%%
+39 | experiment.cultures[7].get_first_od_timestamp()
+   | ^^^^^^^^^^ F821
+40 | #%%
+41 | experiment.start()
+   |
+
+flask_app/tests/experiment_test.py:41:1: F821 Undefined name `experiment`
+   |
+39 | experiment.cultures[7].get_first_od_timestamp()
+40 | #%%
+41 | experiment.start()
+   | ^^^^^^^^^^ F821
+42 | #%%
+43 | experiment.stop()
+   |
+
+flask_app/tests/experiment_test.py:43:1: F821 Undefined name `experiment`
+   |
+41 | experiment.start()
+42 | #%%
+43 | experiment.stop()
+   | ^^^^^^^^^^ F821
+44 | #%%
+45 | experiment.pause_dilution_worker()
+   |
+
+flask_app/tests/experiment_test.py:45:1: F821 Undefined name `experiment`
+   |
+43 | experiment.stop()
+44 | #%%
+45 | experiment.pause_dilution_worker()
+   | ^^^^^^^^^^ F821
+46 | #%%
+47 | #%%
+   |
+
+flask_app/tests/experiment_test.py:71:1: E402 Module level import not at top of file
+   |
+69 |     dev.stirrers.set_speed(v, "stopped")
+70 | #%%
+71 | from minimal_device.od_sensor import measure_od_all
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+72 | print(measure_od_all(device=dev))
+   |
+
+flask_app/tests/experiment_test.py:75:1: F821 Undefined name `experiment_worker`
+   |
+74 | #%%
+75 | experiment_worker.pause()
+   | ^^^^^^^^^^^^^^^^^ F821
+76 | #%%
+77 | experiment_worker.stop()
+   |
+
+flask_app/tests/experiment_test.py:77:1: F821 Undefined name `experiment_worker`
+   |
+75 | experiment_worker.pause()
+76 | #%%
+77 | experiment_worker.stop()
+   | ^^^^^^^^^^^^^^^^^ F821
+78 | #%%
+79 | # Keep the experiment worker running for a while
+   |
+
+flask_app/tests/experiment_test.py:83:1: F821 Undefined name `experiment_worker`
+   |
+82 | # Pause the experiment worker
+83 | experiment_worker.pause()
+   | ^^^^^^^^^^^^^^^^^ F821
+84 | time.sleep(5)
+   |
+
+flask_app/tests/experiment_test.py:87:1: F821 Undefined name `experiment_worker`
+   |
+86 | # Resume the experiment worker
+87 | experiment_worker.resume()
+   | ^^^^^^^^^^^^^^^^^ F821
+88 | time.sleep(5)
+   |
+
+flask_app/tests/experiment_test.py:91:1: F821 Undefined name `experiment_worker`
+   |
+90 | # Stop the experiment worker
+91 | experiment_worker.stop()
+   | ^^^^^^^^^^^^^^^^^ F821
+   |
+
+flask_app/tests/old_tests/culture_test.py:1:22: F401 [*] `datetime.datetime` imported but unused
+  |
+1 | from datetime import datetime, timedelta
+  |                      ^^^^^^^^ F401
+2 |
+3 | from experiment.experiment import Experiment
+  |
+  = help: Remove unused import
+
+flask_app/tests/old_tests/culture_test.py:1:32: F401 [*] `datetime.timedelta` imported but unused
+  |
+1 | from datetime import datetime, timedelta
+  |                                ^^^^^^^^^ F401
+2 |
+3 | from experiment.experiment import Experiment
+  |
+  = help: Remove unused import
+
+flask_app/tests/old_tests/culture_test.py:4:8: F401 [*] `time` imported but unused
+  |
+3 | from experiment.experiment import Experiment
+4 | import time
+  |        ^^^^ F401
+5 |
+6 | from flask import Flask
+  |
+  = help: Remove unused import: `time`
+
+flask_app/tests/old_tests/culture_test.py:15:1: E402 Module level import not at top of file
+   |
+13 | dev.connect()
+14 |
+15 | from experiment.database_models import ExperimentModel, db
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+16 | import os
+   |
+
+flask_app/tests/old_tests/culture_test.py:16:1: E402 Module level import not at top of file
+   |
+15 | from experiment.database_models import ExperimentModel, db
+16 | import os
+   | ^^^^^^^^^ E402
+17 |
+18 | from flask_app.server import create_app
+   |
+
+flask_app/tests/old_tests/culture_test.py:18:1: E402 Module level import not at top of file
+   |
+16 | import os
+17 |
+18 | from flask_app.server import create_app
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+19 | app = create_app()
+20 | ctx = app.app_context()
+   |
+
+flask_app/tests/old_tests/culture_test.py:78:1: E402 Module level import not at top of file
+   |
+76 | # experiment.stop()
+77 | #%%
+78 | from pprint import pprint
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+79 | pprint(c.parameters.__dict__)
+80 | pprint(str(c.experiment.get_status()).replace("'", '').replace('"', ''))
+   |
+
+flask_app/tests/old_tests/culture_tests.py:2:8: F401 [*] `datetime` imported but unused
+  |
+1 | # tests.py
+2 | import datetime
+  |        ^^^^^^^^ F401
+3 | import random
+4 | import sys
+  |
+  = help: Remove unused import: `datetime`
+
+flask_app/tests/old_tests/culture_tests.py:3:8: F401 [*] `random` imported but unused
+  |
+1 | # tests.py
+2 | import datetime
+3 | import random
+  |        ^^^^^^ F401
+4 | import sys
+5 | import time
+  |
+  = help: Remove unused import: `random`
+
+flask_app/tests/old_tests/culture_tests.py:5:8: F401 [*] `time` imported but unused
+  |
+3 | import random
+4 | import sys
+5 | import time
+  |        ^^^^ F401
+6 | import unittest
+7 | import json
+  |
+  = help: Remove unused import: `time`
+
+flask_app/tests/old_tests/culture_tests.py:7:8: F401 [*] `json` imported but unused
+  |
+5 | import time
+6 | import unittest
+7 | import json
+  |        ^^^^ F401
+8 | from pprint import pprint
+9 | sys.path.insert(0, "..")
+  |
+  = help: Remove unused import: `json`
+
+flask_app/tests/old_tests/culture_tests.py:31:37: F541 [*] f-string without any placeholders
+   |
+30 |     def test_get_current_experiment(self):
+31 |         response1 = self.client.get(f'/experiments/1')
+   |                                     ^^^^^^^^^^^^^^^^^ F541
+32 |         self.assertEqual(response1.status_code, 200)
+33 |         response = self.client.get(f'/experiments/current').get_json()
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/culture_tests.py:33:36: F541 [*] f-string without any placeholders
+   |
+31 |         response1 = self.client.get(f'/experiments/1')
+32 |         self.assertEqual(response1.status_code, 200)
+33 |         response = self.client.get(f'/experiments/current').get_json()
+   |                                    ^^^^^^^^^^^^^^^^^^^^^^^ F541
+34 |         self.assertEqual(response["id"], 1)
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/culture_tests.py:37:9: F841 Local variable `response1` is assigned to but never used
+   |
+36 |     def test_culture(self):
+37 |         response1 = self.client.get(f'/experiments/6')
+   |         ^^^^^^^^^ F841
+38 |         c=self.app.experiment.cultures[3]
+39 |         with self.app.app_context():
+   |
+   = help: Remove assignment to unused variable `response1`
+
+flask_app/tests/old_tests/culture_tests.py:37:37: F541 [*] f-string without any placeholders
+   |
+36 |     def test_culture(self):
+37 |         response1 = self.client.get(f'/experiments/6')
+   |                                     ^^^^^^^^^^^^^^^^^ F541
+38 |         c=self.app.experiment.cultures[3]
+39 |         with self.app.app_context():
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/culture_tests.py:66:37: F541 [*] f-string without any placeholders
+   |
+64 |             pump2_stock_drug_concentration=300)
+65 |
+66 |         response1 = self.client.get(f'/experiments/8')
+   |                                     ^^^^^^^^^^^^^^^^^ F541
+67 |         print(response1.get_json())
+68 |         culture=self.app.experiment.cultures[3]
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/culture_tests.py:78:37: F541 [*] f-string without any placeholders
+   |
+77 |     def test_plot_model(self):
+78 |         response1 = self.client.get(f'/experiments/11')
+   |                                     ^^^^^^^^^^^^^^^^^^ F541
+79 |         print(response1.get_json())
+80 |         culture=self.app.experiment.cultures[3]
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/culture_update_test.py:119:1: E402 Module level import not at top of file
+    |
+119 | from pprint import pprint, pformat
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+120 | pprint(object_to_dict(c.experiment))
+121 | #%%
+    |
+
+flask_app/tests/old_tests/culture_update_test.py:119:28: F401 [*] `pprint.pformat` imported but unused
+    |
+119 | from pprint import pprint, pformat
+    |                            ^^^^^^^ F401
+120 | pprint(object_to_dict(c.experiment))
+121 | #%%
+    |
+    = help: Remove unused import: `pprint.pformat`
+
+flask_app/tests/old_tests/db _update_test.py:1:22: F401 [*] `datetime.datetime` imported but unused
+  |
+1 | from datetime import datetime, timedelta
+  |                      ^^^^^^^^ F401
+2 |
+3 | import numpy as np
+  |
+  = help: Remove unused import
+
+flask_app/tests/old_tests/db _update_test.py:1:32: F401 [*] `datetime.timedelta` imported but unused
+  |
+1 | from datetime import datetime, timedelta
+  |                                ^^^^^^^^^ F401
+2 |
+3 | import numpy as np
+  |
+  = help: Remove unused import
+
+flask_app/tests/old_tests/db _update_test.py:3:17: F401 [*] `numpy` imported but unused
+  |
+1 | from datetime import datetime, timedelta
+2 |
+3 | import numpy as np
+  |                 ^^ F401
+4 |
+5 | from experiment.experiment import Experiment
+  |
+  = help: Remove unused import: `numpy`
+
+flask_app/tests/old_tests/db _update_test.py:27:1: E402 Module level import not at top of file
+   |
+26 | #%%
+27 | from copy import deepcopy
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+28 | params = deepcopy(experiment_model.parameters)
+   |
+
+flask_app/tests/old_tests/device_test.py:2:8: F401 [*] `os` imported but unused
+  |
+1 | #%%
+2 | import os
+  |        ^^ F401
+3 | import sys
+4 | sys.path.append('./flask_app/')
+  |
+  = help: Remove unused import: `os`
+
+flask_app/tests/old_tests/device_test.py:17:1: E402 Module level import not at top of file
+   |
+15 | speeds = dev.stirrers.measure_all_rpms()
+16 | #%%
+17 | import numpy as np
+   | ^^^^^^^^^^^^^^^^^^ E402
+18 | import re
+19 | import time
+   |
+
+flask_app/tests/old_tests/device_test.py:18:1: E402 Module level import not at top of file
+   |
+16 | #%%
+17 | import numpy as np
+18 | import re
+   | ^^^^^^^^^ E402
+19 | import time
+20 | import matplotlib.pyplot as plt
+   |
+
+flask_app/tests/old_tests/device_test.py:19:1: E402 Module level import not at top of file
+   |
+17 | import numpy as np
+18 | import re
+19 | import time
+   | ^^^^^^^^^^^ E402
+20 | import matplotlib.pyplot as plt
+21 | speeds={1:0.4,
+   |
+
+flask_app/tests/old_tests/device_test.py:20:1: E402 Module level import not at top of file
+   |
+18 | import re
+19 | import time
+20 | import matplotlib.pyplot as plt
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+21 | speeds={1:0.4,
+22 |  2:0.4,
+   |
+
+flask_app/tests/old_tests/device_test.py:32:1: E402 Module level import not at top of file
+   |
+30 | #%%
+31 | dev.stirrers._set_duty_cycle(7, 0.4)
+32 | import time
+   | ^^^^^^^^^^^ E402
+33 | import re
+34 | import numpy as np
+   |
+
+flask_app/tests/old_tests/device_test.py:32:8: F811 [*] Redefinition of unused `time` from line 19
+   |
+30 | #%%
+31 | dev.stirrers._set_duty_cycle(7, 0.4)
+32 | import time
+   |        ^^^^ F811
+33 | import re
+34 | import numpy as np
+   |
+   = help: Remove definition: `time`
+
+flask_app/tests/old_tests/device_test.py:33:1: E402 Module level import not at top of file
+   |
+31 | dev.stirrers._set_duty_cycle(7, 0.4)
+32 | import time
+33 | import re
+   | ^^^^^^^^^ E402
+34 | import numpy as np
+35 | import matplotlib.pyplot as plt
+   |
+
+flask_app/tests/old_tests/device_test.py:33:8: F811 [*] Redefinition of unused `re` from line 18
+   |
+31 | dev.stirrers._set_duty_cycle(7, 0.4)
+32 | import time
+33 | import re
+   |        ^^ F811
+34 | import numpy as np
+35 | import matplotlib.pyplot as plt
+   |
+   = help: Remove definition: `re`
+
+flask_app/tests/old_tests/device_test.py:33:8: F401 [*] `re` imported but unused
+   |
+31 | dev.stirrers._set_duty_cycle(7, 0.4)
+32 | import time
+33 | import re
+   |        ^^ F401
+34 | import numpy as np
+35 | import matplotlib.pyplot as plt
+   |
+   = help: Remove unused import: `re`
+
+flask_app/tests/old_tests/device_test.py:34:1: E402 Module level import not at top of file
+   |
+32 | import time
+33 | import re
+34 | import numpy as np
+   | ^^^^^^^^^^^^^^^^^^ E402
+35 | import matplotlib.pyplot as plt
+36 | #%%
+   |
+
+flask_app/tests/old_tests/device_test.py:34:17: F811 [*] Redefinition of unused `np` from line 17
+   |
+32 | import time
+33 | import re
+34 | import numpy as np
+   |                 ^^ F811
+35 | import matplotlib.pyplot as plt
+36 | #%%
+   |
+   = help: Remove definition: `np`
+
+flask_app/tests/old_tests/device_test.py:35:1: E402 Module level import not at top of file
+   |
+33 | import re
+34 | import numpy as np
+35 | import matplotlib.pyplot as plt
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+36 | #%%
+37 | rpm=3000
+   |
+
+flask_app/tests/old_tests/device_test.py:35:29: F811 [*] Redefinition of unused `plt` from line 20
+   |
+33 | import re
+34 | import numpy as np
+35 | import matplotlib.pyplot as plt
+   |                             ^^^ F811
+36 | #%%
+37 | rpm=3000
+   |
+   = help: Remove definition: `plt`
+
+flask_app/tests/old_tests/device_test.py:43:44: F821 Undefined name `vial_number`
+   |
+41 |     time.sleep(0.5)
+42 | #%%
+43 | dev.device_data["stirrers"]["calibration"][vial_number]={'high': 1, 'low': 0.1}
+   |                                            ^^^^^^^^^^^ F821
+44 |
+45 | #%%
+   |
+
+flask_app/tests/old_tests/device_test.py:78:1: E402 Module level import not at top of file
+   |
+76 | dev.eeprom.read_config_from_device()
+77 | #%%
+78 | from minimal_device.device_data import default_device_data
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+79 | print(default_device_data)
+80 | dev.device_data = default_device_data
+   |
+
+flask_app/tests/old_tests/device_test.py:81:1: E402 Module level import not at top of file
+   |
+79 | print(default_device_data)
+80 | dev.device_data = default_device_data
+81 | import time
+   | ^^^^^^^^^^^ E402
+82 | t=time.time()
+83 | dev.eeprom.save_config_to_eeprom()
+   |
+
+flask_app/tests/old_tests/experiment_routes_tests.py:41:36: F541 [*] f-string without any placeholders
+   |
+40 |     def test_get_experiment(self):
+41 |         response = self.client.get(f'/experiments/1')
+   |                                    ^^^^^^^^^^^^^^^^^ F541
+42 |         self.assertEqual(response.status_code, 200)
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:45:37: F541 [*] f-string without any placeholders
+   |
+44 |     def test_get_current_experiment(self):
+45 |         response1 = self.client.get(f'/experiments/1')
+   |                                     ^^^^^^^^^^^^^^^^^ F541
+46 |         self.assertEqual(response1.status_code, 200)
+47 |         response = self.client.get(f'/experiments/current').get_json()
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:47:36: F541 [*] f-string without any placeholders
+   |
+45 |         response1 = self.client.get(f'/experiments/1')
+46 |         self.assertEqual(response1.status_code, 200)
+47 |         response = self.client.get(f'/experiments/current').get_json()
+   |                                    ^^^^^^^^^^^^^^^^^^^^^^^ F541
+48 |         self.assertEqual(response["id"], 1)
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:52:13: F841 Local variable `response` is assigned to but never used
+   |
+50 |     def test_direct_update(self):
+51 |         with self.app.app_context():
+52 |             response = self.client.get(f'/experiments/1')
+   |             ^^^^^^^^ F841
+53 |             parameters = self.app.experiment.parameters
+54 |             rand = random.randint(10, 50)/100
+   |
+   = help: Remove assignment to unused variable `response`
+
+flask_app/tests/old_tests/experiment_routes_tests.py:52:40: F541 [*] f-string without any placeholders
+   |
+50 |     def test_direct_update(self):
+51 |         with self.app.app_context():
+52 |             response = self.client.get(f'/experiments/1')
+   |                                        ^^^^^^^^^^^^^^^^^ F541
+53 |             parameters = self.app.experiment.parameters
+54 |             rand = random.randint(10, 50)/100
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:59:35: F541 [*] f-string without any placeholders
+   |
+57 |             assert self.app.experiment.parameters['cultures']["1"]['od_threshold'] == rand
+58 |             assert self.app.experiment.model.parameters['cultures']["1"]['od_threshold'] == rand
+59 |             exp = self.client.get(f'/experiments/1').get_json()
+   |                                   ^^^^^^^^^^^^^^^^^ F541
+60 |             print(rand, exp)
+61 |             assert exp['parameters']['cultures']["1"]['od_threshold'] == rand
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:66:40: F541 [*] f-string without any placeholders
+   |
+64 |         with self.app.app_context():
+65 |             # First, create an experiment
+66 |             response = self.client.get(f'/experiments/8')
+   |                                        ^^^^^^^^^^^^^^^^^ F541
+67 |             self.assertEqual(response.status_code, 200)
+68 |             id = response.get_json()["id"]
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:68:13: F841 Local variable `id` is assigned to but never used
+   |
+66 |             response = self.client.get(f'/experiments/8')
+67 |             self.assertEqual(response.status_code, 200)
+68 |             id = response.get_json()["id"]
+   |             ^^ F841
+69 |             parameters = response.get_json()["parameters"]
+   |
+   = help: Remove assignment to unused variable `id`
+
+flask_app/tests/old_tests/experiment_routes_tests.py:75:40: F541 [*] f-string without any placeholders
+   |
+75 | …     response = self.client.put(f'/experiments/current/parameters', data=json.dumps({'parameters': parameters}), content_type='applic…
+   |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ F541
+76 | …     self.assertEqual(response.status_code, 200)
+77 | …     response = self.client.get(f'/experiments/current')
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:77:40: F541 [*] f-string without any placeholders
+   |
+75 | …     response = self.client.put(f'/experiments/current/parameters', data=json.dumps({'parameters': parameters}), content_type='applic…
+76 | …     self.assertEqual(response.status_code, 200)
+77 | …     response = self.client.get(f'/experiments/current')
+   |                                  ^^^^^^^^^^^^^^^^^^^^^^^ F541
+78 | …     parameters = response.get_json()["parameters"]
+79 | …     self.assertEqual(rand, parameters['cultures']["1"]['od_threshold'])
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:85:36: F541 [*] f-string without any placeholders
+   |
+84 |     def test_start_stop(self):
+85 |         response = self.client.get(f'/experiments/1')
+   |                                    ^^^^^^^^^^^^^^^^^ F541
+86 |         response = self.client.put(f'/experiments/current/status', data=json.dumps({'status': 'running'}),
+87 |                                    content_type='application/json')
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:86:36: F541 [*] f-string without any placeholders
+   |
+84 |     def test_start_stop(self):
+85 |         response = self.client.get(f'/experiments/1')
+86 |         response = self.client.put(f'/experiments/current/status', data=json.dumps({'status': 'running'}),
+   |                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ F541
+87 |                                    content_type='application/json')
+88 |         self.assertEqual(response.status_code, 200)
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:89:36: F541 [*] f-string without any placeholders
+   |
+87 |                                    content_type='application/json')
+88 |         self.assertEqual(response.status_code, 200)
+89 |         response = self.client.get(f'/experiments/current')
+   |                                    ^^^^^^^^^^^^^^^^^^^^^^^ F541
+90 |         self.assertEqual(response.get_json()["status"], 'running')
+91 |         self.client.put(f'/experiments/current/status', data=json.dumps({'status': 'stopped'}),
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:91:25: F541 [*] f-string without any placeholders
+   |
+89 |         response = self.client.get(f'/experiments/current')
+90 |         self.assertEqual(response.get_json()["status"], 'running')
+91 |         self.client.put(f'/experiments/current/status', data=json.dumps({'status': 'stopped'}),
+   |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ F541
+92 |                         content_type='application/json')
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:96:29: F541 [*] f-string without any placeholders
+   |
+94 |     def test_update_experiment_parameters2(self):
+95 |         with self.app.app_context():
+96 |             self.client.get(f'/experiments/1')
+   |                             ^^^^^^^^^^^^^^^^^ F541
+97 |
+98 |             response = self.client.get(f'/experiments/current')
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:98:40: F541 [*] f-string without any placeholders
+    |
+ 96 |             self.client.get(f'/experiments/1')
+ 97 |
+ 98 |             response = self.client.get(f'/experiments/current')
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ F541
+ 99 |             stv = response.get_json()["parameters"]["stock_volume_drug"]
+100 |             print(stv, "stock_volume_drug before")
+    |
+    = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:104:40: F541 [*] f-string without any placeholders
+    |
+102 |             parameters["stock_volume_drug"] = stv - 10
+103 |             self.app.experiment.parameters = parameters
+104 |             response = self.client.get(f'/experiments/current')
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ F541
+105 |             stv = response.get_json()["parameters"]["stock_volume_drug"]
+106 |             print(stv, "stock_volume_drug after")
+    |
+    = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:108:40: F541 [*] f-string without any placeholders
+    |
+106 |             print(stv, "stock_volume_drug after")
+107 |
+108 |             response = self.client.get(f'/experiments/current')
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ F541
+109 |             stv = response.get_json()["parameters"]["stock_volume_drug"]
+110 |             print(stv, "stock_volume_drug before")
+    |
+    = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:114:40: F541 [*] f-string without any placeholders
+    |
+112 |             parameters["stock_volume_drug"] = stv - 10
+113 |             self.app.experiment.parameters = parameters
+114 |             response = self.client.get(f'/experiments/current')
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ F541
+115 |             stv = response.get_json()["parameters"]["stock_volume_drug"]
+116 |             print(stv, "stock_volume_drug after")
+    |
+    = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:118:40: F541 [*] f-string without any placeholders
+    |
+116 |             print(stv, "stock_volume_drug after")
+117 |
+118 |             response = self.client.get(f'/experiments/current')
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ F541
+119 |             stv = response.get_json()["parameters"]["stock_volume_drug"]
+120 |             print(stv, "stock_volume_drug before")
+    |
+    = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:124:40: F541 [*] f-string without any placeholders
+    |
+122 |             parameters["stock_volume_drug"] = stv - 10
+123 |             self.app.experiment.parameters = parameters
+124 |             response = self.client.get(f'/experiments/current')
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ F541
+125 |             stv = response.get_json()["parameters"]["stock_volume_drug"]
+126 |             print(stv, "stock_volume_drug after")
+    |
+    = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:129:40: F541 [*] f-string without any placeholders
+    |
+128 |         def test_update_experiment_parameters3(self):
+129 |             response = self.client.get(f'/experiments/current')
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ F541
+130 |             stv = response.get_json()["parameters"]["stock_volume_drug"]
+131 |             print(stv, "stock_volume_drug before")
+    |
+    = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/experiment_routes_tests.py:135:40: F541 [*] f-string without any placeholders
+    |
+133 |             parameters["stock_volume_drug"] = stv - 10
+134 |             self.app.experiment.parameters = parameters
+135 |             response = self.client.get(f'/experiments/current')
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ F541
+136 |             stv = response.get_json()["parameters"]["stock_volume_drug"]
+137 |             print(stv, "stock_volume_drug after")
+    |
+    = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/plot_test.py:2:32: F401 [*] `datetime.timedelta` imported but unused
+  |
+1 | import time
+2 | from datetime import datetime, timedelta
+  |                                ^^^^^^^^^ F401
+3 |
+4 | import experiment.plot
+  |
+  = help: Remove unused import: `datetime.timedelta`
+
+flask_app/tests/old_tests/plot_test.py:9:1: E402 Module level import not at top of file
+   |
+ 7 | dev = None
+ 8 |
+ 9 | from experiment.database_models import ExperimentModel, db
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+10 | import os
+   |
+
+flask_app/tests/old_tests/plot_test.py:10:1: E402 Module level import not at top of file
+   |
+ 9 | from experiment.database_models import ExperimentModel, db
+10 | import os
+   | ^^^^^^^^^ E402
+11 |
+12 | from flask_app.server import create_app
+   |
+
+flask_app/tests/old_tests/plot_test.py:10:8: F401 [*] `os` imported but unused
+   |
+ 9 | from experiment.database_models import ExperimentModel, db
+10 | import os
+   |        ^^ F401
+11 |
+12 | from flask_app.server import create_app
+   |
+   = help: Remove unused import: `os`
+
+flask_app/tests/old_tests/plot_test.py:12:1: E402 Module level import not at top of file
+   |
+10 | import os
+11 |
+12 | from flask_app.server import create_app
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+13 | app = create_app()
+14 | ctx = app.app_context()
+   |
+
+flask_app/tests/old_tests/plot_test.py:21:1: E402 Module level import not at top of file
+   |
+19 | c = exp.cultures[2]
+20 | #%%
+21 | import pandas as pd
+   | ^^^^^^^^^^^^^^^^^^^ E402
+22 | df=pd.read_csv(r"C:\Users\crusnac\Dropbox\IST\replifactory_v5\data\Cobalt_300922\vial_1\od.csv")
+23 | dosedf=pd.read_csv(r"C:\Users\crusnac\Dropbox\IST\replifactory_v5\data\Cobalt_300922\vial_1\medium2_concentration.csv")
+   |
+
+flask_app/tests/old_tests/plot_test.py:45:1: E402 Module level import not at top of file
+   |
+43 | #%%
+44 |
+45 | import experiment.plot
+   | ^^^^^^^^^^^^^^^^^^^^^^ E402
+46 | import importlib
+47 | #%%
+   |
+
+flask_app/tests/old_tests/plot_test.py:45:8: F811 [*] Redefinition of unused `experiment.plot` from line 4
+   |
+43 | #%%
+44 |
+45 | import experiment.plot
+   |        ^^^^^^^^^^^^^^^ F811
+46 | import importlib
+47 | #%%
+   |
+   = help: Remove definition: `experiment.plot`
+
+flask_app/tests/old_tests/plot_test.py:46:1: E402 Module level import not at top of file
+   |
+45 | import experiment.plot
+46 | import importlib
+   | ^^^^^^^^^^^^^^^^ E402
+47 | #%%
+48 | importlib.reload(experiment)
+   |
+
+flask_app/tests/old_tests/plot_test.py:50:1: E402 Module level import not at top of file
+   |
+48 | importlib.reload(experiment)
+49 | importlib.reload(experiment.plot)
+50 | from experiment.plot import plot_culture
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+51 |
+52 | t0=time.time()
+   |
+
+flask_app/tests/old_tests/plot_test.py:66:1: E402 Module level import not at top of file
+   |
+64 | c.is_time_to_dilute()
+65 | #%%
+66 | from pprint import pprint
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+67 | pprint(c.__dict__)
+   |
+
+flask_app/tests/old_tests/service_routes_tests.py:2:8: F401 [*] `datetime` imported but unused
+  |
+1 | # tests.py
+2 | import datetime
+  |        ^^^^^^^^ F401
+3 | import random
+4 | import sys
+  |
+  = help: Remove unused import: `datetime`
+
+flask_app/tests/old_tests/service_routes_tests.py:3:8: F401 [*] `random` imported but unused
+  |
+1 | # tests.py
+2 | import datetime
+3 | import random
+  |        ^^^^^^ F401
+4 | import sys
+5 | import time
+  |
+  = help: Remove unused import: `random`
+
+flask_app/tests/old_tests/service_routes_tests.py:5:8: F401 [*] `time` imported but unused
+  |
+3 | import random
+4 | import sys
+5 | import time
+  |        ^^^^ F401
+6 | import unittest
+7 | import json
+  |
+  = help: Remove unused import: `time`
+
+flask_app/tests/old_tests/service_routes_tests.py:7:8: F401 [*] `json` imported but unused
+  |
+5 | import time
+6 | import unittest
+7 | import json
+  |        ^^^^ F401
+8 |
+9 | sys.path.insert(0, "..")
+  |
+  = help: Remove unused import: `json`
+
+flask_app/tests/old_tests/service_routes_tests.py:31:37: F541 [*] f-string without any placeholders
+   |
+30 |     def test_capture(self):
+31 |         response1 = self.client.get(f'/capture')
+   |                                     ^^^^^^^^^^^ F541
+32 |         print(response1.get_json())
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/service_routes_tests.py:35:37: F541 [*] f-string without any placeholders
+   |
+34 |     def test_update(self):
+35 |         response1 = self.client.get(f'/update_software')
+   |                                     ^^^^^^^^^^^^^^^^^^^ F541
+36 |         print(response1.get_json())
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/old_tests/service_routes_tests.py:39:37: F541 [*] f-string without any placeholders
+   |
+38 |     def test_update_log(self):
+39 |         response1 = self.client.get(f'/update_log')
+   |                                     ^^^^^^^^^^^^^^ F541
+40 |         print(response1.get_json())
+   |
+   = help: Remove extraneous `f` prefix
+
+flask_app/tests/simulation_test.py:1:83: F401 [*] `experiment.ModelBasedCulture.culture_growth_model.get_simulation_efficiency` imported but unused
+  |
+1 | from experiment.ModelBasedCulture.culture_growth_model import CultureGrowthModel, get_simulation_efficiency, culture_growth_model_defau…
+  |                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^ F401
+2 | from experiment.ModelBasedCulture.morbidostat_updater import MorbidostatUpdater, morbidostat_updater_default_parameters
+  |
+  = help: Remove unused import: `experiment.ModelBasedCulture.culture_growth_model.get_simulation_efficiency`
+
+flask_app/tests/simulation_test.py:7:1: E402 Module level import not at top of file
+  |
+5 | model = CultureGrowthModel(**culture_growth_model_default_parameters)
+6 | model.updater = updater
+7 | from experiment.plot import plot_culture
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E402
+8 |
+9 | model.simulate_experiment(24)
+  |
+
+flask_app/tests/simulation_test.py:11:1: E402 Module level import not at top of file
+   |
+ 9 | model.simulate_experiment(24)
+10 | fig = plot_culture(model)
+11 | import plotly.io as pio
+   | ^^^^^^^^^^^^^^^^^^^^^^^ E402
+12 | pio.show(fig)
+13 | print(model.updater.status_dict)
+   |
+
+scripts/update_and_restart_experiment.py:5:8: F401 [*] `threading` imported but unused
+  |
+3 | import logging
+4 | import subprocess
+5 | import threading
+  |        ^^^^^^^^^ F401
+6 |
+7 | # Setup logging with timestamp
+  |
+  = help: Remove unused import: `threading`
+
+scripts/update_and_restart_experiment.py:129:11: F541 [*] f-string without any placeholders
+    |
+128 | def start_current_experiment():
+129 |     url = f"http://localhost:5000/experiments/current/status"
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ F541
+130 |     response = requests.put(url, json={"status": "running"})
+131 |     if current_experiment_status == "paused":
+    |
+    = help: Remove extraneous `f` prefix
+
+vue/src/server/url_into_sheet.py:46:25: F841 [*] Local variable `e` is assigned to but never used
+   |
+44 |     try:
+45 |         row = sheet.find(hostname).row
+46 |     except Exception as e:
+   |                         ^ F841
+47 |         row = len(sheet.col_values(1)) + 1
+48 |         sheet.update(f'A{row}', hostname)
+   |
+   = help: Remove assignment to unused variable `e`
+
+Found 153 errors.
+[*] 80 fixable with the `--fix` option (9 hidden fixes can be enabled with the `--unsafe-fixes` option).

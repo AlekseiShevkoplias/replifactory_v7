@@ -1,10 +1,6 @@
 # tests.py
-import datetime
-import random
 import sys
-import time
 import unittest
-import json
 
 sys.path.insert(0, "..")
 sys.path.insert(0, "../experiment")
@@ -28,15 +24,15 @@ class RoutesTestCase(unittest.TestCase):
             db.session.commit()
 
     def test_capture(self):
-        response1 = self.client.get(f'/capture')
+        response1 = self.client.get('/capture')
         print(response1.get_json())
 
     def test_update(self):
-        response1 = self.client.get(f'/update_software')
+        response1 = self.client.get('/update_software')
         print(response1.get_json())
 
     def test_update_log(self):
-        response1 = self.client.get(f'/update_log')
+        response1 = self.client.get('/update_log')
         print(response1.get_json())
 
 if __name__ == '__main__':

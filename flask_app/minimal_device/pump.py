@@ -4,7 +4,6 @@ import math
 # import numpy as np
 # import pandas as pd
 # import scipy.optimize
-from scipy.optimize import fsolve
 
 from .stepper import Stepper
 

@@ -1,5 +1,4 @@
 #%%
-import os
 import sys
 sys.path.append('./flask_app/')
 import importlib
@@ -15,7 +14,6 @@ dev.connect()
 speeds = dev.stirrers.measure_all_rpms()
 #%%
 import numpy as np
-import re
 import time
 import matplotlib.pyplot as plt
 speeds={1:0.4,
@@ -29,10 +27,6 @@ speeds={1:0.4,
 #%%
 #%%
 dev.stirrers._set_duty_cycle(7, 0.4)
-import time
-import re
-import numpy as np
-import matplotlib.pyplot as plt
 #%%
 rpm=3000
 for i in range(8):

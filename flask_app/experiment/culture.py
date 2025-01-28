@@ -3,10 +3,10 @@ from datetime import datetime
 import numpy as np
 from experiment.database_models import CultureData, PumpData, CultureGenerationData
 from experiment.growth_rate import calculate_last_growth_rate
-from experiment.ModelBasedCulture.morbidostat_updater import MorbidostatUpdater, morbidostat_updater_default_parameters
+from experiment.ModelBasedCulture.morbidostat_updater import MorbidostatUpdater
 from minimal_device.dilution import make_device_dilution
 
-from .ModelBasedCulture.culture_growth_model import CultureGrowthModel, culture_growth_model_default_parameters
+from .ModelBasedCulture.culture_growth_model import CultureGrowthModel
 from .ModelBasedCulture.real_culture_wrapper import RealCultureWrapper
 from .plot import plot_culture
 from .export import export_culture_csv, export_culture_plot_html

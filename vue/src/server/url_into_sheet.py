@@ -43,7 +43,7 @@ def edit_main_sheet(spreadsheet_id):
     hostname = socket.gethostname()
     try:
         row = sheet.find(hostname).row
-    except Exception as e:
+    except Exception:
         row = len(sheet.col_values(1)) + 1
         sheet.update(f'A{row}', hostname)
     sheet.update(f'B{row}', time.ctime())

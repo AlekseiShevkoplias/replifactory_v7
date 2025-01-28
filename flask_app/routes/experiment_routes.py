@@ -1,7 +1,6 @@
 # experiment_routes.py
 import sys
 
-import pandas as pd
 import sqlalchemy
 
 sys.path.insert(0, "../")
@@ -168,7 +167,7 @@ def update_experiment_status():
         if device is None or not device.is_connected():
             try:
                 connect_device()
-            except Exception as e:
+            except Exception:
                 return jsonify({'error': 'device not connected'}), 400
 
         if status == 'running':
@@ -186,7 +185,7 @@ def get_status_dict():
     try:
         info = current_app.experiment.get_experiment_status_dict()
         return jsonify(info)
-    except Exception as e:
+    except Exception:
         import traceback
         return traceback.format_exc()
 

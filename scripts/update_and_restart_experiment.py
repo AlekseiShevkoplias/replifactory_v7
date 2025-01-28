@@ -2,7 +2,6 @@ import time
 import requests
 import logging
 import subprocess
-import threading
 
 # Setup logging with timestamp
 logging.basicConfig(level=logging.DEBUG)
@@ -126,7 +125,7 @@ def select_experiment(experiment_id=None):
 
 
 def start_current_experiment():
-    url = f"http://localhost:5000/experiments/current/status"
+    url = "http://localhost:5000/experiments/current/status"
     response = requests.put(url, json={"status": "running"})
     if current_experiment_status == "paused":
         response = requests.put(url, json={"status": "paused"})

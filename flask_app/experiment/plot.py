@@ -1,5 +1,4 @@
-import json
-from datetime import timedelta, datetime
+from datetime import datetime
 import plotly.graph_objs as go
 
 from experiment.ModelBasedCulture.culture_growth_model import CultureGrowthModel

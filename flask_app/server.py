@@ -6,10 +6,9 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__)))  # add dir to pytho
 
 from waitress import serve
 from flask import Flask, current_app
-from routes.device_routes import device_routes, connect_device
+from routes.device_routes import device_routes
 
 from flask_cors import CORS
-from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import logging
 import os

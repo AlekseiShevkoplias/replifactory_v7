@@ -1,5 +1,5 @@
 import time
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import experiment.plot
 from experiment.experiment import Experiment
@@ -7,7 +7,6 @@ from experiment.experiment import Experiment
 dev = None
 
 from experiment.database_models import ExperimentModel, db
-import os
 
 from flask_app.server import create_app
 app = create_app()
@@ -42,7 +41,6 @@ for i in range(dosedf.shape[0]):
                               timestamp=t)
 #%%
 
-import experiment.plot
 import importlib
 #%%
 importlib.reload(experiment)

@@ -1,7 +1,6 @@
 
 import threading
 import time
-import pyftdi.i2c
 
 
 class RGBLedController:

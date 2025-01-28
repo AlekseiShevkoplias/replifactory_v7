@@ -1,7 +1,6 @@
 import threading
 import time
 
-import pyftdi
 from pyftdi.i2c import I2cController
 from pyftdi.spi import SpiController
 import sys

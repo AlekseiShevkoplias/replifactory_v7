@@ -1,10 +1,6 @@
 # tests.py
-import datetime
-import random
 import sys
-import time
 import unittest
-import json
 from pprint import pprint
 sys.path.insert(0, "..")
 sys.path.insert(0, "../experiment")
@@ -28,13 +24,13 @@ class RoutesTestCase(unittest.TestCase):
             db.session.commit()
 
     def test_get_current_experiment(self):
-        response1 = self.client.get(f'/experiments/1')
+        response1 = self.client.get('/experiments/1')
         self.assertEqual(response1.status_code, 200)
-        response = self.client.get(f'/experiments/current').get_json()
+        response = self.client.get('/experiments/current').get_json()
         self.assertEqual(response["id"], 1)
 
     def test_culture(self):
-        response1 = self.client.get(f'/experiments/6')
+        response1 = self.client.get('/experiments/6')
         c=self.app.experiment.cultures[3]
         with self.app.app_context():
             c.get_latest_data_from_db()
@@ -63,7 +59,7 @@ class RoutesTestCase(unittest.TestCase):
             pump1_stock_drug_concentration=0,  # Concentration of the drug in the pump 1 stock
             pump2_stock_drug_concentration=300)
 
-        response1 = self.client.get(f'/experiments/8')
+        response1 = self.client.get('/experiments/8')
         print(response1.get_json())
         culture=self.app.experiment.cultures[3]
         print(culture.__dict__)
@@ -75,7 +71,7 @@ class RoutesTestCase(unittest.TestCase):
         pprint(culture.__dict__)
 
     def test_plot_model(self):
-        response1 = self.client.get(f'/experiments/11')
+        response1 = self.client.get('/experiments/11')
         print(response1.get_json())
         culture=self.app.experiment.cultures[3]
         print(culture.__dict__)

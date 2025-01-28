@@ -1,5 +1,4 @@
 from datetime import timedelta
-from pprint import pprint
 import numpy as np
 
 morbidostat_updater_default_parameters = {

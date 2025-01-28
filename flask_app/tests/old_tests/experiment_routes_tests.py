@@ -38,32 +38,32 @@ class RoutesTestCase(unittest.TestCase):
         assert name in [exp["name"] for exp in response]
 
     def test_get_experiment(self):
-        response = self.client.get(f'/experiments/1')
+        response = self.client.get('/experiments/1')
         self.assertEqual(response.status_code, 200)
 
     def test_get_current_experiment(self):
-        response1 = self.client.get(f'/experiments/1')
+        response1 = self.client.get('/experiments/1')
         self.assertEqual(response1.status_code, 200)
-        response = self.client.get(f'/experiments/current').get_json()
+        response = self.client.get('/experiments/current').get_json()
         self.assertEqual(response["id"], 1)
 
     def test_direct_update(self):
         with self.app.app_context():
-            response = self.client.get(f'/experiments/1')
+            response = self.client.get('/experiments/1')
             parameters = self.app.experiment.parameters
             rand = random.randint(10, 50)/100
             parameters['cultures']["1"]['od_threshold'] = rand
             self.app.experiment.parameters = parameters
             assert self.app.experiment.parameters['cultures']["1"]['od_threshold'] == rand
             assert self.app.experiment.model.parameters['cultures']["1"]['od_threshold'] == rand
-            exp = self.client.get(f'/experiments/1').get_json()
+            exp = self.client.get('/experiments/1').get_json()
             print(rand, exp)
             assert exp['parameters']['cultures']["1"]['od_threshold'] == rand
 
     def test_update_experiment_parameters(self):
         with self.app.app_context():
             # First, create an experiment
-            response = self.client.get(f'/experiments/8')
+            response = self.client.get('/experiments/8')
             self.assertEqual(response.status_code, 200)
             id = response.get_json()["id"]
             parameters = response.get_json()["parameters"]
@@ -72,9 +72,9 @@ class RoutesTestCase(unittest.TestCase):
             parameters['cultures']["1"]['od_threshold'] = rand
 
 
-            response = self.client.put(f'/experiments/current/parameters', data=json.dumps({'parameters': parameters}), content_type='application/json')
+            response = self.client.put('/experiments/current/parameters', data=json.dumps({'parameters': parameters}), content_type='application/json')
             self.assertEqual(response.status_code, 200)
-            response = self.client.get(f'/experiments/current')
+            response = self.client.get('/experiments/current')
             parameters = response.get_json()["parameters"]
             self.assertEqual(rand, parameters['cultures']["1"]['od_threshold'])
             # self.app.experiment.cultures[1].get_latest_data_from_db()
@@ -82,57 +82,57 @@ class RoutesTestCase(unittest.TestCase):
             self.assertEqual(rand, self.app.experiment.parameters["cultures"]["1"]['od_threshold'])
 
     def test_start_stop(self):
-        response = self.client.get(f'/experiments/1')
-        response = self.client.put(f'/experiments/current/status', data=json.dumps({'status': 'running'}),
+        response = self.client.get('/experiments/1')
+        response = self.client.put('/experiments/current/status', data=json.dumps({'status': 'running'}),
                                    content_type='application/json')
         self.assertEqual(response.status_code, 200)
-        response = self.client.get(f'/experiments/current')
+        response = self.client.get('/experiments/current')
         self.assertEqual(response.get_json()["status"], 'running')
-        self.client.put(f'/experiments/current/status', data=json.dumps({'status': 'stopped'}),
+        self.client.put('/experiments/current/status', data=json.dumps({'status': 'stopped'}),
                         content_type='application/json')
 
     def test_update_experiment_parameters2(self):
         with self.app.app_context():
-            self.client.get(f'/experiments/1')
+            self.client.get('/experiments/1')
 
-            response = self.client.get(f'/experiments/current')
+            response = self.client.get('/experiments/current')
             stv = response.get_json()["parameters"]["stock_volume_drug"]
             print(stv, "stock_volume_drug before")
             parameters = self.app.experiment.parameters
             parameters["stock_volume_drug"] = stv - 10
             self.app.experiment.parameters = parameters
-            response = self.client.get(f'/experiments/current')
+            response = self.client.get('/experiments/current')
             stv = response.get_json()["parameters"]["stock_volume_drug"]
             print(stv, "stock_volume_drug after")
 
-            response = self.client.get(f'/experiments/current')
+            response = self.client.get('/experiments/current')
             stv = response.get_json()["parameters"]["stock_volume_drug"]
             print(stv, "stock_volume_drug before")
             parameters = self.app.experiment.parameters
             parameters["stock_volume_drug"] = stv - 10
             self.app.experiment.parameters = parameters
-            response = self.client.get(f'/experiments/current')
+            response = self.client.get('/experiments/current')
             stv = response.get_json()["parameters"]["stock_volume_drug"]
             print(stv, "stock_volume_drug after")
 
-            response = self.client.get(f'/experiments/current')
+            response = self.client.get('/experiments/current')
             stv = response.get_json()["parameters"]["stock_volume_drug"]
             print(stv, "stock_volume_drug before")
             parameters = self.app.experiment.parameters
             parameters["stock_volume_drug"] = stv - 10
             self.app.experiment.parameters = parameters
-            response = self.client.get(f'/experiments/current')
+            response = self.client.get('/experiments/current')
             stv = response.get_json()["parameters"]["stock_volume_drug"]
             print(stv, "stock_volume_drug after")
 
         def test_update_experiment_parameters3(self):
-            response = self.client.get(f'/experiments/current')
+            response = self.client.get('/experiments/current')
             stv = response.get_json()["parameters"]["stock_volume_drug"]
             print(stv, "stock_volume_drug before")
             parameters = self.app.experiment.parameters
             parameters["stock_volume_drug"] = stv - 10
             self.app.experiment.parameters = parameters
-            response = self.client.get(f'/experiments/current')
+            response = self.client.get('/experiments/current')
             stv = response.get_json()["parameters"]["stock_volume_drug"]
             print(stv, "stock_volume_drug after")
 

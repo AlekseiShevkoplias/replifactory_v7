@@ -5,7 +5,6 @@ from flask import Blueprint, request, jsonify, current_app
 import time
 import sys
 sys.path.insert(0, '..')
-from minimal_device.device_data import default_device_data
 from minimal_device.base_device import BaseDevice
 device_routes = Blueprint('device_routes', __name__)
 

@@ -1,4 +1,4 @@
-from experiment.ModelBasedCulture.culture_growth_model import CultureGrowthModel, get_simulation_efficiency, culture_growth_model_default_parameters
+from experiment.ModelBasedCulture.culture_growth_model import CultureGrowthModel, culture_growth_model_default_parameters
 from experiment.ModelBasedCulture.morbidostat_updater import MorbidostatUpdater, morbidostat_updater_default_parameters
 
 updater = MorbidostatUpdater(**morbidostat_updater_default_parameters)

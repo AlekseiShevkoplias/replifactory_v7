@@ -3,7 +3,7 @@
 # Current growth model does not include effects induced by stationary phase.
 
 from experiment.ModelBasedCulture.morbidostat_updater import MorbidostatUpdater, morbidostat_updater_default_parameters
-from experiment.ModelBasedCulture.culture_growth_model import CultureGrowthModel, get_simulation_efficiency, culture_growth_model_default_parameters
+from experiment.ModelBasedCulture.culture_growth_model import CultureGrowthModel, culture_growth_model_default_parameters
 from test_model import score_model
 from scipy.optimize import minimize
 

@@ -116,7 +116,7 @@ def object_to_dict(obj):
     return result
 
 
-from pprint import pprint, pformat
+from pprint import pprint
 pprint(object_to_dict(c.experiment))
 #%%
 exp.model.parameters["cultures"]["1"]["description"] = "lalala"
